@@ -11,15 +11,14 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 if( !isset($_POST['name']) || strtoupper($_POST['captcha']) != $_SESSION['captcha_id'] ){
     echo json_encode(['message' => 'co loi roi']);
-
     return ;
 }
 
 try {
     $message = new Message();
-    $message->addTo('dodat10.93@gmail.com')
+    $message->addTo('toandd.pgbank@petrolimex.com.vn')
             ->addFrom($_POST['email'])
-            ->setSubject($_POST['subject'])
+            ->setSubject($_POST['subject'] || 'vay vốn')
             ->setBody($_POST['message']);
 
     // Setup SMTP transport using LOGIN authentication
@@ -29,8 +28,8 @@ try {
         'host'              => 'smtp.gmail.com',
         'connection_class'  => 'login',
         'connection_config' => [
-            'username' => 'dodat10.93@gmail.com',
-            'password' => 'thangkianobiet',
+            'username' => 'toanpgbank@gmail.com',
+            'password' => 'toanpgbank123',
             'ssl' => 'tls'
         ],
     ]);

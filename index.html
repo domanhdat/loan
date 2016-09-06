@@ -576,7 +576,7 @@
 
                     <div class="message">
                         <i class="rounded-x fa fa-check"></i>
-                        <p>Your message was successfully sent!</p>
+                        <p style="color: #6fb679">Your message was successfully sent!</p>
                     </div>
                 </form>
             </div><!--/col-md-9-->
@@ -651,16 +651,21 @@
 <script src="assets/js/plugins/revolution-slider.js"></script>
 <script src="assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"></script>
 <script>
-    jQuery(document).ready(function () {
-        App.init();
-        App.initMap();
-        App.initCounter();
-        App.initParallaxBg();
-        ContactForm.initContactForm();
-        OwlCarousel.initOwlCarousel();
-        RevolutionSlider.initRSfullScreen();
-        RevolutionSlider.initRSfullWidth();
-    });
+    ;(function($){
+        $(pageReady);
+
+        function pageReady() {
+            App.init();
+            App.initMap();
+            App.initCounter();
+            App.initParallaxBg();
+            ContactForm.initContactForm();
+            OwlCarousel.initOwlCarousel();
+            RevolutionSlider.initRSfullScreen();
+            RevolutionSlider.initRSfullWidth();
+        } //pageReady
+    })(window.jQuery);
+
 </script>
 <script src="assets/plugins/respond.js"></script>
 <script src="assets/plugins/html5shiv.js"></script>

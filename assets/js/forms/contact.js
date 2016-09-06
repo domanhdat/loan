@@ -64,7 +64,7 @@ var ContactForm = function () {
 	                    },
 	                    success: function()
 	                    {
-	                        $("#sky-form3").addClass('submited');
+	                        $("#sky-form3").addClass('submited').reset();
 	                    }
 	                });
 	            },
