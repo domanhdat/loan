@@ -45,7 +45,7 @@ var App = function () {
             var WindowHeight = $(window).height();
             $(".fullheight").css("height", WindowHeight - HeaderHeight);
         });
-    }
+    };
 
     // handleLangs
     function handleLangs() {
@@ -63,7 +63,7 @@ var App = function () {
                 $(this).css("padding-top", $(this).parent().height() / 2 - $(this).height() / 2);
             });
         });
-    }
+    };
 
     function handleHeader() {
         //jQuery to collapse the navbar on scroll
@@ -131,7 +131,7 @@ var App = function () {
                     zoom       : 17
                 });
 
-                var marker = map.addMarker({
+                map.addMarker({
                     lat  : 21.019917,
                     lng  : 105.83320400000002,
                     title: 'Ngân hàng TMCP Xăng dầu Petrolimex - Phòng giao dịch Khâm Thiên'

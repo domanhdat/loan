@@ -650,7 +650,7 @@ a:hover {
 }
 
 .about-section .about-image {
-    padding: 100px 0;
+    /*padding: 100px 0;*/
 }
 
 /*Icon Lists*/
@@ -851,15 +851,21 @@ a:hover {
     margin: 0 -15px;
 }
 
-@media (min-width: 100px) {
+@media (min-width: 768px) {
     .header-top {
         height: 64px;
     }
+    .padding-header {
+        padding-top: 100px;
+    }
 }
 
-@media (max-width: 100px) {
+@media (max-width: 767px) {
     .header-top {
         height: 51px;
+    }
+    .padding-header {
+        padding-top: 20px;
     }
 }
 
