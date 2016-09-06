@@ -1,0 +1,13 @@
+{
+    "name": "dodat/php",
+    "authors": [
+        {
+            "name": "dodat",
+            "email": "dodat10.93@gmail.com"
+        }
+    ],
+    "require": {
+        "zendframework/zend-mail": "^2.7",
+        "zendframework/zend-servicemanager": "^3.1"
+    }
+}
