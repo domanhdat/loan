@@ -15,26 +15,30 @@ if( !isset($_POST['name']) || strtoupper($_POST['captcha']) != $_SESSION['captch
     return ;
 }
 
-$message = new Message();
-$message->addTo('dodat10.93@gmail.com')
-        ->addFrom($_POST['email'])
-        ->setSubject($_POST['subject'])
-        ->setBody($_POST['message']);
+try {
+    $message = new Message();
+    $message->addTo('dodat10.93@gmail.com')
+            ->addFrom($_POST['email'])
+            ->setSubject($_POST['subject'])
+            ->setBody($_POST['message']);
 
-// Setup SMTP transport using LOGIN authentication
-$transport = new SmtpTransport();
-$options   = new SmtpOptions([
-    'name'              => 'smtp.gmail.com',
-    'host'              => 'smtp.gmail.com',
-    'connection_class'  => 'login',
-    'connection_config' => [
-        'username' => 'dodat10.93@gmail.com',
-        'password' => 'thangkianobiet',
-        'ssl' => 'tls'
-    ],
-]);
-$transport->setOptions($options);
-$transport->send($message);
+    // Setup SMTP transport using LOGIN authentication
+    $transport = new SmtpTransport();
+    $options   = new SmtpOptions([
+        'name'              => 'smtp.gmail.com',
+        'host'              => 'smtp.gmail.com',
+        'connection_class'  => 'login',
+        'connection_config' => [
+            'username' => 'dodat10.93@gmail.com',
+            'password' => 'thangkianobiet',
+            'ssl' => 'tls'
+        ],
+    ]);
+    $transport->setOptions($options);
+    $transport->send($message);
 
-echo json_encode(['message' => 'thanh cong']);
+    echo json_encode(['message' => 'thanh cong']);
+} catch ( \Exception $e) {
+    echo json_encode(['message' => (string)$e]);
+}
 return;
