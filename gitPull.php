@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 $secret = 'e34d514f7db5c8aac72a7c8191a09617';
 
 if (!isValidPayload($secret) ) {
+    error_log(__FILE__.__LINE__);
     return;
 }
 
