@@ -25,7 +25,5 @@ function isValidPayload($secret) {
 
     // Calculate hash based on payload and the secret
     $payloadHash = hash_hmac($algo, $payload, $secret);
-    error_log($hash);
-    error_log($payloadHash);
     return $hash === $payloadHash;
 }
