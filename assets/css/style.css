@@ -781,12 +781,16 @@ ul.blog-tags a:hover i {
 	text-align: center;
 	position: relative; 
 }
-.who li:hover i, 
-.who li:hover a { 
-	color: #777;
-}
+/*.who li:hover i, */
+/*.who li:hover a { */
+	/*color: #777;*/
+/*}*/
 .who li:hover a:hover {
 	text-decoration: none;
+}
+
+.text-blue {
+	color: #72c02c;
 }
 
 /*Promo Page
